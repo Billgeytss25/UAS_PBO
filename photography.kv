@@ -1,0 +1,115 @@
+<HomeScreen>:    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Welcome to Photography Services'
+            font_size: 32
+            size_hint_y: 0.2
+        Button:
+            text: 'About Us'
+            on_press: app.root.current = 'about'
+        Button:
+            text: 'Our Services'
+            on_press: app.root.current = 'services'
+        Button:
+            text: 'Jobs'
+            on_press: app.root.current = 'jobs'
+        Button:
+            text: 'Sign Up'
+            on_press: app.root.current = 'signup'
+        Button:
+            text: 'Log In'
+            on_press: app.root.current = 'login'
+
+<AboutScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'About Us\n\nHubungi kami di 087709165374'
+            font_size: 24
+            halign: 'center'
+        Button:
+            text: 'Back to Home'
+            on_press: app.root.current = 'home'
+
+<ServicesScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Our Services\n\nLayanan kami: Foto Prewedding, Modelling, Wisuda, Street Photography, Marketing'
+            font_size: 24
+            halign: 'center'
+        Button:
+            text: 'Back to Home'
+            on_press: app.root.current = 'home'
+
+<JobsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Jobs\n\nPengalaman kerja selama 5 tahun'
+            font_size: 24
+            halign: 'center'
+        Button:
+            text: 'Back to Home'
+            on_press: app.root.current = 'home'
+
+<SignUpScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Sign Up'
+            font_size: 32
+        TextInput:
+            id: name
+            hint_text: 'Enter your name'
+            size_hint_y: 0.1
+        TextInput:
+            id: email
+            hint_text: 'Enter your email'
+            size_hint_y: 0.1
+        TextInput:
+            id: password
+            hint_text: 'Create a password'
+            password: True
+            size_hint_y: 0.1
+        Button:
+            text: 'Sign Up'
+            background_color: 0, 0.5, 0.5, 1
+            on_press: root.sign_up_user(name.text, email.text, password.text)
+        Label:
+            id: signup_status
+            text: ''
+            color: 1, 0, 0, 1
+        Button:
+            text: 'Back to Home'
+            background_color: 0, 0.5, 0.5, 1
+            on_press: app.root.current = 'home'
+
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Log In'
+            font_size: 32
+        TextInput:
+            id: email
+            hint_text: 'Enter your email'
+            size_hint_y: 0.1
+        TextInput:
+            id: password
+            hint_text: 'Enter your password'
+            password: True
+            size_hint_y: 0.1
+        Button:
+            text: 'Log In'
+            background_color: 0.3, 0.5, 0.7, 1
+            on_press: root.login_user(email.text, password.text)
+        Label:
+            id: login_status
+            text: ''
+            color: 1, 0, 0, 1
+        Button:
+            text: 'Back to Home'
+            background_color: 0.3, 0.5, 0.7, 1
+            on_press: app.root.current = 'home'
